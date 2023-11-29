@@ -1,17 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import axios from "axios";
-import { handleLogin } from "./helper";
 
 export default function Login(){
     const handleClick= async () =>{
         
-        const data = handleLogin();
+        const clientId="77987eeba03b49dc92317586484f87ac";
+        const redirectUrl="http://localhost:3000/";
+        const apiUrl="https://accounts.spotify.com/authorize";
+        const scope=[
+            "user-read-email",
+            "user-read-private",
+            "user-modify-playback-state",
+            "user-read-currently-playing",
+            "user-read-recently-played",
+            "user-read-playback-position",
+            "user-top-read"
 
+        ];
+                
+        return window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(" ")}&response_type=token&show_daialog=true`;
         
-        // window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(
-        //     " "
-        // )}$response_type=$token&show_daialog=true`;
+
+
     };
     return (
     <Container >

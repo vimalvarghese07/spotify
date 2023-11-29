@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import { StateProvider } from './utils/StateProvider';
 import reducer,{initialState} from './utils/Reducer';
-import Login from './components/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +12,6 @@ root.render(
     <StateProvider initialState={initialState} reducer={reducer}>
     <App />
     </StateProvider>
-    <Login></Login>
   </React.StrictMode>,
   document.getElementById("root")
 );

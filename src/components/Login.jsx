@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Login(){
-    const handleClick= async () =>{
+    const handleClick= () =>{
         
         const clientId="38594493a9834573a19cfdbf869f4ea1";
         const redirectUrl="http://localhost:3000/";
@@ -18,7 +18,7 @@ export default function Login(){
 
         ];
                 
-        return window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(" ")}&response_type=token&show_daialog=true`;
+        window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(" ")}&response_type=token&show_dialog=true`;
         
 
 
